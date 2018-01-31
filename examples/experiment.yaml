@@ -1,0 +1,12 @@
+description: resource to deploy iperf vms over heat
+resources:
+  - name: resource_hibench
+    generator: file:./
+    params:
+      auth_url: <%= ENV['OS_AUTH_URL'] %>
+      username: <%= ENV['OS_USERNAME'] %>
+      password: <%= ENV['OS_PASSWORD'] %>
+      project_name: <%= ENV['OS_PROJECT_NAME'] %>
+      instances: 1
+      flavor: "kvm.m1.large"
+      debug: False
